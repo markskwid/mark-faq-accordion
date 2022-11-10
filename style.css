@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  /* text color */
+  --Verydarkdesaturated: hsl(238, 29%, 16%);
+  --Softred: hsl(14, 88%, 65%);
+  --Verydarkgrayishblue: hsl(237, 12%, 33%);
+  --Darkgrayishblue: hsl(240, 6%, 50%);
+
+  /* background gradient */
+  --Softviolet: hsl(273, 75%, 66%);
+  --Softblue: hsl(240, 73%, 65%);
+
+  /* div color */
+  --lightgrayishblue: hsl(240, 5%, 91%);
+}
+
+/* TYPOGRAPHY */
+
+body {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--Verydarkdesaturated);
+}
+
+@media screen and (min-width: 200px) and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--Verydarkdesaturated);
+  }
+}
+
+/* LAYOUT */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(var(--Softviolet), var(--Softblue));
+}
+
+main .main-container {
+  background-color: var(--lightgrayishblue);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 1000px;
+  border-radius: 20px;
+  height: auto;
+  box-shadow: 0 29px 20px 2px rgba(0, 0, 0, 0.3);
+}
+
+main .main-container .col {
+  display: flex;
+  flex-direction: column;
+  padding: 5em 0;
+}
+
+main .main-container .image-container {
+  position: relative;
+  background-image: url("./images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: -30px;
+  background-position-x: -120px;
+  display: flex;
+  align-items: center;
+  background-attachment: fixed;
+  z-index: 0;
+  justify-content: flex-start;
+}
+
+main .main-container .image-container picture {
+  position: fixed;
+  left: 10.8%;
+  bottom: 25%;
+  z-index: 0;
+}
+
+main .main-container .image-container .box-image {
+  position: fixed;
+  left: 7%;
+  z-index: 1;
+  bottom: 30%;
+}
+
+main .main-container .content-container button {
+  padding: 1.2em 0;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1rem;
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  border-bottom: 1px solid var(--Darkgrayishblue);
+  align-items: center;
+  color: var(--Verydarkdesaturated);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+main .main-container .content-container button:hover {
+  color: var(--Softred);
+}
+
+main .main-container .content-container {
+  padding-right: 7em;
+  padding-top: 3em;
+  padding-bottom: 9em;
+}
+
+main .main-container .content-container button img {
+  margin-left: auto;
+  margin-right: 1em;
+  width: 3%;
+  max-width: 3%;
+}
+
+main .main-container .content-container .accordion {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 0.9rem;
+  border: 0;
+  background-color: transparent;
+  color: var(--Darkgrayishblue);
+  display: none;
+  transition: none;
+}
+
+main .main-container .content-container .active {
+  font-weight: 700;
+  border-bottom: 0;
+  padding: 0.2em 0;
+  padding-bottom: 0.2em;
+  padding-top: 1.2em;
+}
+
+main .main-container .content-container .arrow-up {
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 200px) and (max-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 5em;
+    background-image: linear-gradient(var(--Softviolet), var(--Softblue));
+  }
+
+  main .main-container {
+    background-color: var(--lightgrayishblue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    margin: auto;
+    margin-top: 5em;
+    padding: 0 2em;
+    border-radius: 20px;
+    height: auto;
+    box-shadow: 0 29px 20px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  main .main-container .col {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+
+  main .main-container .image-container {
+    background-image: url("./images/bg-pattern-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-attachment: initial;
+    background-position-x: center;
+    background-position-y: 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 0;
+    justify-content: flex-start;
+    position: relative;
+    padding: 5em 0;
+  }
+
+  main .main-container .image-container picture {
+    z-index: 999;
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    z-index: 0;
+  }
+
+  main .main-container .image-container picture img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  main .main-container .image-container .box-image {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    width: 40%;
+    bottom: 50%;
+  }
+
+  main .main-container .content-container {
+    padding: 0 0;
+    padding-bottom: 4em;
+  }
+
+  main .main-container .content-container button {
+    padding: 1.2em 0;
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 0.9rem;
+    border: 0;
+    background-color: transparent;
+    display: flex;
+    border-bottom: 1px solid var(--Darkgrayishblue);
+    justify-content: flex-start;
+    color: var(--Verydarkdesaturated);
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+  }
+
+  main .main-container .content-container button img {
+    margin-left: auto;
+    margin-right: 0em;
+    width: 3%;
+    max-width: 3%;
+  }
+
+  main .main-container .content-container .accordion {
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 0.88rem;
+    border: 0;
+    background-color: transparent;
+    color: var(--Darkgrayishblue);
+    display: none;
+    padding: 0;
+    transition: none;
+  }
+
+  main .main-container .content-container .active {
+    font-weight: 700;
+    border-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0.2em;
+    padding-top: 1.2em;
+  }
+}
